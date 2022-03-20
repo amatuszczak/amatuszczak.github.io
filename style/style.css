@@ -198,22 +198,22 @@ body #home header .wrapper .desc {
   padding-right: 5em;
 }
 
-body #home header .buttomField {
+body #home header .buttonField {
   padding-top: 10px;
   width: 100%;
+  max-width: 30rem;
 }
 
-body #home .imgwrapped {
+body #home .imgwrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 5px dashed violet;
 }
 
-body #home .imgwrapped img {
+body #home .imgwrapper img {
   max-width: 100%;
 }
 

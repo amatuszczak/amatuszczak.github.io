@@ -167,15 +167,16 @@ body{
                 padding-right: 5em;
             }
         }
-        .buttomField{
+        .buttonField{
             padding-top: 10px;
             width: 100%;
+            max-width: 30rem;
         }
     }
-    .imgwrapped{
+    .imgwrapper{
         display:flex;
         justify-content: center;
-        border:5px dashed violet;
+
         img{
             max-width: 100%; 
             // max: width 100%;
