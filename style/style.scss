@@ -4,6 +4,7 @@ $darkcolor:#000036;
 $seccolor: #282162;
 $primaryColor: #7562E0;
 $white:white;
+$cardBackground:#31313F;
 $marginSize:3.5rem;
 
 h1,h2,h3,h4{ color:$primaryColor; }
@@ -132,8 +133,15 @@ body{
             
         }
     }
->section{
+>section,main{
     margin:0 $marginSize;
+    @media(min-width:768px){
+        width: 60%;
+        margin: 0 auto;
+    }
+    @media(min-width:1280px){
+        width: 50%;
+    }
 }
 
     #home{
@@ -207,6 +215,80 @@ body{
         p{
             padding-left: 1em;
         }
+    }
+
+    #services{
+        section{
+            display:grid;
+            gap:1em;
+            
+            article{
+                border-radius: 16px;
+                border: 3px solid $primaryColor;
+                display: grid;
+                place-items: center;
+                grid-template-rows: 2fr 1fr 4fr;
+                padding-top:2.5em;
+                h3, p{
+                    text-align:center;
+                }
+                h3{margin:0;color:$white;}
+                img{align-self:end;}
+                p{
+                    align-self:start;
+                    padding:0 .5em;
+                }
+
+                &:nth-child(even){
+                    border-color: $white;
+                    h3{color:$primaryColor}
+                }
+            }
+            
+        }
+    }
+    @media(min-width:768px) and (max-width:1250px){
+        section{
+            grid-template-columns: 1fr 1fr;
+            
+        }
+        
+    }
+    @media(min-width: 1250px){
+        section{
+            grid-template-columns: 1fr 1fr 1fr;
+            
+        }
+    }
+
+    #projects{
+        .container{
+            display:flex;
+            gap:1em;
+            flex-wrap: wrap;
+            justify-content: center;
+            article{
+                padding:1em;
+                background-color: $cardBackground;
+                border-radius:8px;
+                max-width:311px;
+                img{
+                    max-width:100%;
+                }
+            }
+        }
+        @media(min-width:768px) and (max-width:1250px){
+           .container{
+               article{
+                   width:calc(50% - 2.5em); ;
+               }
+           }
+
+            }
+         @media(min-width:768px) and (max-width:1250px){
+             article{
+                 width:calc(33% - 8em/3) ;
+             }
     }
 }
 

@@ -145,8 +145,21 @@ body > header h1 {
   }
 }
 
-body > section {
+body > section, body main {
   margin: 0 3.5rem;
+}
+
+@media (min-width: 768px) {
+  body > section, body main {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  body > section, body main {
+    width: 50%;
+  }
 }
 
 body #home {
@@ -254,5 +267,95 @@ body #about span {
 
 body #about p {
   padding-left: 1em;
+}
+
+body #services section {
+  display: -ms-grid;
+  display: grid;
+  gap: 1em;
+}
+
+body #services section article {
+  border-radius: 16px;
+  border: 3px solid #7562E0;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -ms-grid-rows: 2fr 1fr 4fr;
+      grid-template-rows: 2fr 1fr 4fr;
+  padding-top: 2.5em;
+}
+
+body #services section article h3, body #services section article p {
+  text-align: center;
+}
+
+body #services section article h3 {
+  margin: 0;
+  color: white;
+}
+
+body #services section article img {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+body #services section article p {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  padding: 0 .5em;
+}
+
+body #services section article:nth-child(even) {
+  border-color: white;
+}
+
+body #services section article:nth-child(even) h3 {
+  color: #7562E0;
+}
+
+@media (min-width: 768px) and (max-width: 1250px) {
+  body section {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1250px) {
+  body section {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+body #projects .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #projects .container article {
+  padding: 1em;
+  background-color: #31313F;
+  border-radius: 8px;
+  max-width: 311px;
+}
+
+body #projects .container article img {
+  max-width: 100%;
+}
+
+@media (min-width: 768px) and (max-width: 1250px) {
+  body #projects .container article {
+    width: 50%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
