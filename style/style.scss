@@ -1,32 +1,50 @@
-$darkencolour: #181824;
-$darkcolour:#000036;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+$darkencolor: #181824;
+$darkcolor:#000036;
 $seccolor: #282162;
-$primaryColour: #7562E0;
-$white: white;
+$primaryColor: #7562E0;
+$white:white;
 $marginSize:3.5rem;
+
+h1,h2,h3,h4{ color:$primaryColor; }
+.button{
+    text-decoration: none;
+    border: 2px solid $primaryColor;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: $white;
+    font-size: .7em;
+    &.fill{
+        background-color: $primaryColor ;
+    }
+}
 
 body{
     font-family: "Poppins" , sans-serif;
-    background-color: $darkencolour;
-    color:$primaryColour;
+    background-color: $darkencolor;
+    color:white;
+    margin: 0;
     > header{
-        border: 2px dashed yellow;
+        padding: 8px;
+        position: sticky;
+        z-index: 2;
+        top: 0;
+        background-color: $darkencolor;
         height: 3rem;
         display:flex ;
         align-items: center;
         input{display: none;}
         label{
-            border:2px dashed red;
+            z-index: 1;
             width: 3rem;
             height: 3rem;
-            position:fixed;
+            position:absolute;
             cursor:pointer;
 
             //div::after{content: "TEST";}
             div{ 
-                transition: 1s;
-
-                background-color: black;
+                transition: .5s;
+                background-color: $primaryColor;
                 height: 5px;
                 width: 100%;
                 position:absolute;
@@ -38,7 +56,7 @@ body{
                     top:calc(50% - 2.5px);
                 }
                 &:nth-child(3){
-                //  border: 2p dashed yellow;
+                
                 top:calc(75% - 2.5px);
             
                 }
@@ -47,22 +65,26 @@ body{
 
 
         }
-        nav{display:none;
+        nav{
+        transition: .5s;
+        background-color: $darkencolor;
         position:fixed;
-        border:2px dashed red;
         left:0;
-        top:0;
+        top: calc(-100% - 3.5rem);
         width: 100%;
-        height: 100%;
-        margin-top: $marginSize;
+        height: fit-content;
+        margin-top: 3.5rem;
         ul{
             list-style-type: none;
-            padding: 0;
+            a{
+                text-decoration: none;
+                color: $white;
+            }
         }
         
         }
         #toggler:checked ~ nav{
-            display: block;
+            top:0;
         }
         #toggler:checked ~ label{
             div{
@@ -113,18 +135,41 @@ body{
 
 
     #home{
-    border:5px dashed red;
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
     margin:0 $marginSize;
+    padding: $marginSize*2 0;
     header{
-        border:5px dashed blue;
-        .wrapper{
-            border:5px dashed yellow;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         
+        
+        .wrapper{
+            max-width: 30rem;
+            p{
+             margin: .5rem auto;
+             font-size:clamp(.7em, 6vw, 2.5em);
+
+            }
+            h2{
+                font-size: 2.5rem;
+                color:$white;
+                margin: 0;
+                font-size: clamp(1em, 10vm, 4em);
+                line-height: 1em;
+            }
+            .desc{
+                
+                font-size: .7em;
+                padding-right: 5em;
+            }
         }
         .buttomField{
-            border:5px dashed pink;
+            padding-top: 10px;
+            width: 100%;
         }
     }
     .imgwrapped{
