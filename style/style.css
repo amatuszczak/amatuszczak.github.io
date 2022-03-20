@@ -145,6 +145,10 @@ body > header h1 {
   }
 }
 
+body > section {
+  margin: 0 3.5rem;
+}
+
 body #home {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -156,7 +160,6 @@ body #home {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 3.5rem;
   padding: 7rem 0;
 }
 
@@ -177,7 +180,7 @@ body #home header {
 }
 
 body #home header .wrapper {
-  max-width: 30rem;
+  max-width: 30em;
 }
 
 body #home header .wrapper p {
@@ -186,7 +189,6 @@ body #home header .wrapper p {
 }
 
 body #home header .wrapper h2 {
-  font-size: 2.5rem;
   color: white;
   margin: 0;
   font-size: clamp(1em, 10vm, 4em);
@@ -201,7 +203,7 @@ body #home header .wrapper .desc {
 body #home header .buttonField {
   padding-top: 10px;
   width: 100%;
-  max-width: 30rem;
+  max-width: 30em;
 }
 
 body #home .imgwrapper {
@@ -225,5 +227,32 @@ body #home .imgwrapper img {
         -ms-flex-direction: row;
             flex-direction: row;
   }
+}
+
+body #about h2 {
+  margin-bottom: 0;
+}
+
+body #about > p {
+  margin: 0;
+  font-size: .8em;
+}
+
+body #about div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #about span {
+  color: #7562E0;
+  font-size: 3.5rem;
+}
+
+body #about p {
+  padding-left: 1em;
 }
 /*# sourceMappingURL=style.css.map */

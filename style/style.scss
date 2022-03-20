@@ -132,13 +132,15 @@ body{
             
         }
     }
-
+>section{
+    margin:0 $marginSize;
+}
 
     #home{
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    margin:0 $marginSize;
+    
     padding: $marginSize*2 0;
     header{
         flex: 1;
@@ -148,14 +150,14 @@ body{
         
         
         .wrapper{
-            max-width: 30rem;
+            max-width: 30em;
             p{
              margin: .5rem auto;
              font-size:clamp(.7em, 6vw, 2.5em);
 
             }
             h2{
-                font-size: 2.5rem;
+               
                 color:$white;
                 margin: 0;
                 font-size: clamp(1em, 10vm, 4em);
@@ -170,7 +172,7 @@ body{
         .buttonField{
             padding-top: 10px;
             width: 100%;
-            max-width: 30rem;
+            max-width: 30em;
         }
     }
     .imgwrapper{
@@ -185,6 +187,25 @@ body{
         @media (min-width:768px){
             padding:$marginSize*2 0;
             flex-direction: row;
+        }
+    }
+
+    #about{
+        h2{margin-bottom: 0;}   
+        > p{
+            margin: 0;
+            font-size: .8em;
+        } 
+        div{
+            display: flex;
+            align-items: center;
+        }
+        span{
+            color: $primaryColor;
+            font-size: 3.5rem;
+        }
+        p{
+            padding-left: 1em;
         }
     }
 }
