@@ -14,7 +14,8 @@ h1,h2,h3,h4{ color:$primaryColor; }
     border-radius: 5px;
     padding: 5px 15px;
     color: $white;
-    font-size: .7em;
+    //font-size: .7em;
+    font-size: clamp(.4em, 1.5vw, .7em);
     &.fill{
         background-color: $primaryColor ;
     }
@@ -133,16 +134,16 @@ body{
             
         }
     }
->section,main{
-    margin:0 $marginSize;
-    @media(min-width:768px){
-        width: 60%;
-        margin: 0 auto;
+    >section,main{
+        margin:0 $marginSize;
+        @media(min-width:768px){
+            width: 60%;
+            margin: 0 auto;
+        }
+        @media(min-width:1280px){
+            width: 50%;
+        }
     }
-    @media(min-width:1280px){
-        width: 50%;
-    }
-}
 
     #home{
     display: flex;
@@ -264,10 +265,11 @@ body{
     #projects{
         .container{
             display:flex;
-            gap:1em;
+            //gap:1em;
             flex-wrap: wrap;
             justify-content: center;
             article{
+                margin:.5em;
                 padding:1em;
                 background-color: $cardBackground;
                 border-radius:8px;
@@ -280,17 +282,81 @@ body{
         @media(min-width:768px) and (max-width:1250px){
            .container{
                article{
-                   width:calc(50% - 2.5em); ;
+                   //50%-obszar jednego przycisku
+                   //2.5 em-połowa wszystkich paddingów
+                   //i marginesów w kontenerze ( 4 em padding i 1 gap)
+                   width:calc(50% - 3.5em);
                }
            }
 
             }
          @media(min-width:768px) and (max-width:1250px){
              article{
-                 width:calc(33% - 8em/3) ;
+                 // 33%-obszar jedenf=go przycisku (100%/3)
+                 //9em-wszystkie paddingi i marginesy
+                 // w kontenerze ( 6em padding i 3em margin)
+                 width:calc(33% - 9em/3);
              }
+        }
+    }
+
+    #contact{
+        margin-top: 2em;
+        h3{color:$white;}
+        form{
+            //border: 2px dashed red;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            input,textarea{
+                box-sizing: border-box;
+                width: 100%;
+                border-radius: 8px;
+                padding: 1em;
+                margin: .5em 0;
+                background-color: $cardBackground;
+                border:none;
+                outline: 0;
+                color:#fff;
+            }
+        }
+
+        @media (min-width:768px){
+            display: flex;
+            header{
+                padding-right: 1.5em;
+            }
+        }
+    }
+
+    footer{
+        
+        padding: 2rem;
+        padding-bottom: 1rem;
+        .links{
+            font-size: 0.8em;
+            display:grid;
+            grid-template-areas:
+             "e1" "e2" "e3" "e4" "e5";
+
+             @media(max-width:960px){
+                grid-template-areas:
+                "e1 e2 e3 e4 e5"!important;
+
+             }
+            
+            a{
+                color: $white;
+                text-decoration: none;
+                opacity: .5;
+
+                @for $i from 1 through 5 {
+                    &:nth-child(#{$i}){
+                        grid-area: e#{$i};
+                    }
+                    
+                }
+            }
+        }
     }
 }
-
-
-
