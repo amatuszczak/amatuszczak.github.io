@@ -20,6 +20,22 @@ h1,h2,h3,h4{ color:$primaryColor; }
         background-color: $primaryColor ;
     }
 }
+@keyframes selectItem {
+    0%{
+        border-color: red;
+    }
+    25%{
+        
+        transform: scale(1.2) rotate(10deg);
+    }
+    75%{
+        transform: scale(1.2) rotate(-5deg);
+    }
+    100%{
+        border-color: blue;
+
+    }
+}
 
 body{
     font-family: "Poppins" , sans-serif;
@@ -224,6 +240,11 @@ body{
             gap:1em;
             
             article{
+                &:hover{
+                animation: selectItem 2s ease-out;
+
+                }
+                background-color: $darkencolor;
                 border-radius: 16px;
                 border: 3px solid $primaryColor;
                 display: grid;
