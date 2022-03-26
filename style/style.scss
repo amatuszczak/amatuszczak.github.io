@@ -338,6 +338,7 @@ body{
             display:grid;
             grid-template-areas:
              "e1" "e2" "e3" "e4" "e5";
+             padding-bottom: 1rem;
 
              @media(max-width:960px){
                 grid-template-areas:
